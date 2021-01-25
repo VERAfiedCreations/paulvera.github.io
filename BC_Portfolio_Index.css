@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+}
+
+#navbar {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 10px;
+    z-index: 1;
+}
+
+#navbar ul {
+    width: 500px;
+    margin: auto;
+}
+
+#navbar ul li {
+    text-align: center;
+    padding-left: 60px;
+    list-style-type: none;
+    display: inline;
+}
+
+#navbar ul li a {
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+span {
+    color: rgba(25,245,24, .8);
+    font-size: 90px;
+    font-weight: 900;
+    text-shadow: -2px 2px 3px black;
+}
+
+span, #span2 {
+    animation: name 1s linear;
+}
+
+@keyframes name {
+    from {
+        transform: rotateX(30deg);
+        transform: rotateZ(360deg);
+        transform-origin: center;
+    }
+    to {
+        transform: rotateX(0deg);
+        transform: rotateZ(0deg);
+    }
+}
+
+#span2 {
+    font-size: 144px;
+    line-height: 100px;
+    color: rgba(25,245,24, .8);
+    font-weight: 500;
+}
+
+#welcome-section {
+    height: 100vh;
+    padding: 70px 20px 0px 20px;
+}
+
+#welcome-section {
+    background-image:url(pexels-fauxels-3184450.jpg);
+    background-position:center;
+    background-origin:border-box; 
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-clip: padding-box;
+}
+
+#welcome-section h1{
+    font-weight: 900;
+    color: whitesmoke;
+    margin: 100px auto;
+    width: 700px;
+    font-size: 77px;
+    height: 50vh;
+    line-height: 95px;
+    text-align: justify-all;
+    text-shadow: -1px 1px 1px black;
+}
+
+.project-tile {
+    width: 100%;
+    height: 80vh;
+    margin: auto;
+    position: relative;
+    top: 70px;
+    left: 120px;
+}
+
+img.projectimage {
+    width: 300px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    overflow-y: hidden;
+}
+
+#Woodworks, #Lori, #Swift {
+    opacity: .3;
+}
+
+.project-column {
+    height: 400px;
+    width: 300px;
+    display: inline-grid;
+    box-shadow: -.5px 1px 3px -.5px;
+    border-radius: 20px;
+    padding: 20px;
+	background-color: whitesmoke;
+    margin: 20px;
+}
+
+#projects {
+    opacity: 1;
+    height: 100vh;
+    padding: 70px 20px 0px 0px;
+
+}
+
+#contact {
+    width: 100%;
+    height: 80vh;
+    padding: 70px 20px 0px 20px;
+}
+
+#keep {
+    font-size: 32px;
+    font-weight: 700;
+    margin: auto;
+   text-align: center;
+}
+
+#contact {
+    background-color: lightgrey;
+}
+
+#flex-form {
+    margin: auto;
+    padding: 30px;
+    box-shadow: -.5px .5px 3px .1px black;
+    width: 500px;
+    background-color:whitesmoke;
+    border-radius: 20px;
+}
+
+#name, #email {
+    width: 500px;
+    height: 30px;
+}
+
+#name:hover, #email:hover, #message:hover {
+    background-color:palegreen;
+    transition-duration: .5s;
+}
+
+#message {
+    height: 200px;
+    width: 500px;
+    resize: none;
+}
+
+#butt {
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    position: relative;
+    left: 150px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#butt:hover {
+    background-color: lightgrey;
+}
+
+footer {
+    width: 100%;
+    height: 5vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 20px;
+}
+
+#social {
+	font-size: 14px;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    color: white;
+}
+
+/* tablet */
+@media only screen and (max-width: 1124px) {
+	#projects {
+		padding-bottom: 800px;
+	}
+}
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+    main {
+        min-width: 600px;
+    }
+    
+    #welcome-section h1 {
+        font-size: 50px;
+    }
+    
+    span {
+        font-size: 70px;
+    }
+    
+    #span2 {
+        font-size: 100px;
+    }
+    
+    #projects {
+        padding-bottom: 800px;
+    }
+    
+    .project-column {
+        width: 300px;
+        position: relative;
+        right: 100px;
+    }
+    
+    #flex-form {
+        width: 390px;
+        margin: 0;
+    }
+    
+    #name, #email {
+    width: 390px;
+    height: 30px;
+}
+    
+    #message {
+        width: 390px;
+    }
+    
+    #butt {
+        position: relative;
+        left: 90px;
+    }
+}

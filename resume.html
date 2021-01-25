@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resume</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-width: 600px;
+    }
+    
+    /* ----------------------  Large Navigation  ------------------------ */
+
+#logo {
+    height: 40px;
+    width: 200px;
+    position: relative;
+    left: 50px;
+    top: 15px;
+    font-size: 40px;
+}
+
+#logo a {
+    text-decoration: none;
+    color:#0F7173; /*--- teal color ---*/
+    letter-spacing: 2px;
+}
+
+#logo a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    grid-area: "nav";
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    z-index: 10;
+}
+
+nav ul {
+    width: 49%;
+    text-align: center;
+}
+
+.nav-links {
+    position: relative;
+    left: 50%;
+    top: -10px;
+    width: 100%;
+    text-align: center;
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FE6D73; /*--- pink color ---*/
+    margin: 0px 15px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    width: 30px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    transform: translateY(3px);
+}
+
+nav ul li a:active {
+    color: white;
+}
+
+#social-links {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    right: -30px;
+    top: 30px;
+}
+
+.social-links {
+    margin: 20px;
+    position: relative;
+    top: -7px;
+}
+
+    
+/*---------------------------  Resume Page*/
+    #resume-container {
+        font-size: 18px;
+        overflow-x: hidden;
+        display:inline-grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header"
+            "aside resume"
+            "aside resume";
+        list-style: circle;
+        padding-top: 70px;
+        color: white;
+        background-color: black;
+        min-width: 100%;
+        width: 100%;
+    }
+    
+    #main-resume {
+        padding: 20px;
+        grid-area: header;
+    }
+    
+    li {
+        font-weight: 700;
+        padding: 5px 0px;
+    }
+    
+    h1 {
+        font-size: 64px;
+        margin: 0;
+        color: #FE6D73;
+    }
+    
+    h2 {
+        color: #FE6D73;
+    }
+    #info a {
+        color: aqua;
+    }
+    
+    #info a:hover {
+        color: #FE6D73;
+        transform: scaleY(43deg);
+    }
+    
+    #address {
+        width: 175px;
+        position: relative;
+        margin-top: 10px;
+        left: 84%;
+    }
+    
+    #port-link {
+        width: 400px;
+        position: relative;
+        left: 75%;
+        margin-bottom: 10px;
+    }
+    
+    #main-background {
+        padding: 20px;
+        grid-area: resume;
+    }
+    
+    #side {
+        width: 300px;
+        padding: 20px;
+        grid-area: aside;
+    }
+    
+    #soft-skills {
+        margin-top: 30px;
+    }
+    
+/*-----------------------Media Queries*/
+
+@media screen and (max-width:972px) {    
+    /*nav / home page*/
+    nav li {
+        font-size: 14px;
+        left: 30px;
+        margin: 0px -5px;
+    }
+    
+    .social-links {
+        position: relative;
+        right: -70px;
+        margin-right: -10px;
+    }
+    
+    /*end of nav*/
+    
+    #resume-container {
+        display: grid;
+        grid-template-columns: auto fr;
+        grid-template-rows: auto fr auto;
+        grid-template-areas:
+        "header",
+        "aside",
+        "resume";
+        overflow: hidden;
+    }
+    
+}
+
+@media screen and (max-width:768px) {   
+    /*nav / home page*/
+    nav {
+        height: 150px;
+        top: 0px;
+    }
+    
+    nav ul {
+        position: relative;
+        width: 400px;
+        left: -197px;
+        top: 60px;
+    }
+    
+    nav li {
+        margin: 10px -10px;
+
+    }
+    
+    nav ul li a {
+        font-size: 15px;
+    }
+    
+    /*end of nav*/
+    
+    #resume-container {
+        display: grid;
+        grid-template-columns: auto fr;
+        grid-template-rows: auto fr auto;
+        grid-template-areas:
+        "aside resume"
+        "aside resume";
+        margin-top: 60px;
+        overflow: hidden;
+        height: 150vh;
+    }
+    
+    #main-resume {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+    .mobile {
+        display: contents;
+    }
+   
+    /*nav / home page*/
+    nav {
+        background-color: black;
+        height: 150px;
+        top: 0px;
+        z-index: 100;
+    }
+    
+    nav ul {
+        top: 60px;
+    }
+    
+    nav li {
+        padding: 10px 10px;
+    }
+    
+    #social-links {
+        display: none;
+    }
+    
+    /*end of nav*/
+    #resume-container {
+        padding-top: 70px;
+    }
+    #main-resume {
+        width: 400px;
+    }
+    
+}
+    
+</style>
+</head>
+
+<body>
+<!--  -------------------------- Navigation---  -->
+<nav>
+    <div id="logo"><a href="index.html"><strong>Paul Vera</strong></a></div>
+        <ul id="nav-links">
+            <li class="nav-links"><a href="index.html">Projects</a></li>
+            <li class="nav-links"><a href="resume.html">Resume</a></li>
+            <li class="nav-links"><a href="portfoliov3skills.html">Skills</a></li>
+          <li class="nav-links"><a href="index.html">Hire</a></li>
+            <li class="nav-links">&nbsp;</li>
+        </ul>
+    <div id="social-links">
+        <a href="https://www.linkedin.com/in/paul-vera-074ab1a5/" class="social-links" target="_blank"><img src="linkedIn.svg" alt="LinkedIn" width="30px"></a>
+        <a href="https://github.com/VERAfiedCreations" class="social-links" target="_blank"><img src="githublogo.svg" alt="GitHub" width="30px"></a>
+       <a href="https://www.freecodecamp.org/verafied" class="social-links" target="_blank"><img src="fcc_primary_small.svg" alt="FreeCodeCamp" width="35px"></a>
+    </div>
+</nav>
+    
+<!----------------------------Main Resume Page -->
+   <div id="resume-container">
+       
+<div id="main-resume">
+<h1>Paul Vera</h1>
+    <div id="info"><p id="port-link">portfolio: <a href="https://github.com/VERAfiedCreations" target="_blank">github.com/VERAfiedCreations</a></p></div>
+<hr>
+<section id="address"><p>
+    185 Patchwork Corners<br>
+    Poteet, TX, 78065<br>
+    (210) 501-9271<br>
+    paulvera1988@yahoo.com
+    </p></section>
+
+</div>
+    
+<aside id="side">
+    
+<div id="tech-skills">
+    <h2>TECH SKILLS</h2>
+    <strong><li>HTML5</li>
+    <li>CSS3</li>
+    <li>JAVASCRIPT</li>
+    <li>UI/UX DESIGN</li>
+    <li>ADOBE SUITE</li>
+    <li>MICROSOFT OFFICE</li></strong>
+</div>
+<div id="soft-skills">
+    <h2>SOFT SKILLS</h2>
+    <li>LEADERSHIP</li>
+    <li>TEAMWORK</li>
+    <li>COMMUNICATION</li>
+    <li>CREATIVE THINKING</li>
+    <li>PROBLEM SOLVING</li>
+    <li>OBJECTIVE OREIENTED</li>
+</div>
+    
+</aside>
+    
+<div id="main-background">
+    
+<div id="employment">
+<h2>EXPERIENCE</h2>
+    
+<div class="job">
+    <p>New Braunfels ISD, New Braunfels, TX<br>
+    CTE Teacher, August 2017 to Present</p>
+    <p>Provided secondary education and managed/coordinated the Business Professionals of America organization</p>
+    <li>Managed over 95+ secondary students each year</li>
+    <li>Business Professional of America Lead Advisor for NBHS</li>
+    <li>Motivated students to acheive a National Award for BPA projects &amp; State competitions</li>
+</div> 
+   <br> 
+<div class="job">
+    <p>VERAfied Creations, San Antonio, TX<br>
+    Owner, August 2018 to Present</p>
+    <p>Provided marketing content and services for small businesses while maintaining relationships with customers.</p>
+    <li>Provide Marketing Email Campaigns</li>
+    <li>Provide Business Marketing</li>
+    <li>Code Business Websites</li>
+    <li>Produce Business Commercials &amp; Promotions</li>
+    <li>Photography &amp; Videography</li>
+</div>
+
+    <br>
+<div class="job">
+    <p>Army, United States<br>
+    Military Police, 2009 to 2014</p>
+    <p>Maintained a secret clearance while defending military bases.</p>
+    <li>Delegated team members as a team leader</li>
+    <li>Completed Warriors Leader Course (Non Commisioned Officer Training)</li>
+    <li>Worked under high-stress environments</li>
+</div>
+</div>
+    
+<br>
+    
+<div id="background">
+<h2>BACKGROUND</h2>    
+    <li>Taught html &amp; css for four years in a secondary education setting</li>
+    <li>Proven supervisor for junior staff</li> 
+    <li>Dedicated professional focused on quality and reliability</li>
+</div>
+    <br>
+<div id="education">
+<h2>EDUCATION</h2>
+    
+    <p>BFA Digital Filmmaking &amp; Video Production<br>
+    Art Institute of San Antonio, 2017</p>
+    <br>
+    <p>Teacher Certification in Technology Applications<br>
+    Texas Education Agency, 2017</p>
+</div>
+</div>
+    
+    
+    
+
+</div>
+</body>
+</html>

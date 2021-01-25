@@ -1,0 +1,451 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-width: 450px;
+    height: auto;
+    overflow-x: hidden;
+    background-image: radial-gradient(white, lightgrey);
+}
+
+/*---------------  Large Nav Background*/
+#nav-color {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    z-index: 1;
+}
+
+/*---------------  Large Header*/
+header.large {
+    width: 300px;
+    position: fixed;
+    left: 20px;
+    top: -200px;
+    z-index: 1;
+}
+
+/*---------------  Large Navigation*/
+nav.large {
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+
+nav.large ul {
+    margin: auto;
+    width: 710px;
+    padding-left: 200px;
+}
+
+nav.large ul li {
+    text-align: center;
+    display: inline;
+    list-style: none;
+    padding-right: 80px;
+}
+
+nav.large ul li a {
+    color: rgba(21,35,141,1.00);
+    text-decoration: none;
+}
+
+/*---------------  Mobile Navigation*/
+.mobile {
+    display: none;
+}
+
+nav.mobile {
+    z-index: 2;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    min-width: 439px;
+}
+
+nav.mobile .home-button {
+    display: inline;
+    position: fixed;
+    top: 690px;
+    left: 10px;
+    height: 80px;
+    width: 145px;
+    text-align: center;
+    background-color: rgba(21,35,141,1.00);
+    cursor: pointer; 
+    border: thin white solid;
+    z-index: 1;
+}
+
+nav.mobile .gallery-button {
+    display: inline;
+    position: fixed;
+    top: 690px;
+    left: 155px;
+    height: 80px;
+    width: 145px;
+    text-align: center;
+    background-color: rgba(21,35,141,1.00);
+    cursor: pointer;
+    border: thin white solid;
+    z-index: 1;
+}
+
+nav.mobile .contact-button {
+    display: inline;
+    position: fixed;
+    top: 690px;
+    left: 300px;
+    height: 80px;
+    width: 145px;
+    text-align: center;
+    background-color: rgba(21,35,141,1.00);
+    cursor: pointer;
+    border: thin white solid;
+    z-index: 1;
+}
+
+nav.mobile a {
+    min-width: 400px;
+    color: white;
+    position: fixed;
+    text-decoration: none;
+}
+
+/*------------------------- Large Home Page*/
+#home.large {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#welcome.large {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+#slogan.large {
+    flex-basis: 50%;
+    min-width: 300px;
+    font-size: 32px;
+}
+
+#slogan h1 {
+    color: rgba(21,35,141,1.00);
+}
+
+#welcome-button {
+    width: 320px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(21,35,141,1.00);
+    margin-bottom: -10px;
+}
+
+#welcome-button a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/*------------------------- (Mobile) Home Page*/
+#mobile-home.mobile {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-right: 20px;
+    position: relative;
+    top: -620px;
+}
+
+#mobile-welcome.mobile {
+    max-width: 100%;
+}
+
+#mobile-slogan.mobile {
+    flex-basis: 50%;
+    min-width: 300px;
+    font-size: 32px;
+}
+
+#mobile-slogan h1 {
+    color: rgba(21,35,141,1.00);
+}
+
+#mobile-welcome-button {
+    width: 320px;
+    padding:20px;
+    border-radius: 50px;
+    background-color: rgba(21,35,141,1.00);
+    margin: 30px;
+}
+
+#mobile-welcome-button a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#slogan.mobile {
+    min-width: 300px;
+    font-size: 24px;
+}
+
+/*----------------------- Large Build Page*/
+#featured-item.large {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+
+#featured.large {
+    padding-left: 50px;
+    width: 300px;
+    margin: auto;
+    font-size: 34px;
+    color: rgba(21,35,141,1.00);
+}
+
+#col1, #col2 {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#col1.large {
+    flex-basis: 50%;
+    min-width: 500px;
+}
+
+#col2.large {
+    padding: -50px 0px;
+}
+
+#more-button {
+    width: 300px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(21,35,141,1.00);
+    transform: translate(165%,50%);
+    margin: auto;
+    margin-left: 60px;
+    z-index: -1;
+}
+
+#more-button a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/*----------------------- (Mobile) Build Page*/
+#mobile-build-info {
+    margin-top: -200px;
+}
+
+#mobile-featured-item.mobile {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+
+#mobile-featured.mobile {
+    padding-left: 80px;
+    width: 300px;
+    margin: auto;
+}
+
+#mobile-col1, #mobile-col2 {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#mobile-col1.mobile {
+    flex-basis: 50%;
+    min-width: 500px;
+}
+
+#mobile-col2.mobile {
+    padding: -50px 0px;
+}
+
+#mobile-more-button {
+    width: 300px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(21,35,141,1.00);
+    transform: translate(170%,50%);
+    margin: auto;
+    margin-left: 60px;
+}
+
+#mobile-more-button a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/*----------------------- Contact Page*/
+#contact {
+    padding-top: 60px;
+	margin-top: 20px;
+}
+
+#form p {
+    font-size: 32px;
+}
+
+#form span {
+    font-size: 36px;
+    color: red
+}
+
+#form {
+    padding-top: 60px;
+    width: 610px;
+    height: 90vh;
+    margin: auto;
+}
+
+#form input {
+    width: 600px;
+    height: 30px;
+    margin: 4px 0px;
+}
+
+#form textarea {
+    resize: none;
+    width: 600px;
+    height: 300px;
+}
+
+#form button {
+    border-radius: 20px;
+    width: 600px;
+    height: 40px;
+}
+
+#work, #personal {
+    padding: 40px;
+    font-size: 3px;
+}
+
+/*------------------------- Media Query*/
+@media screen and (max-width: 978px){
+    #more-button {
+        transform: translate(70%,50%);
+    }
+}
+
+@media screen and (max-width:768px) {
+    nav.large {
+        margin-left: 0px;
+        z-index: 1;
+    }
+    
+    header.large  {
+        z-index: 1;
+    }
+    
+    nav.large ul {
+        padding-right: -300px;
+    }
+    
+    nav.large ul li{
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+    #home.large {
+        padding: 150px 0px 0px 0px;
+        height: 100vh;
+    }
+    #form, #form input, #form textarea, #form button, #quote {
+        width: 350px;
+        position: relative;
+        left: 0px;
+    }
+    
+    #featured.large {
+        color: rgba(21,35,141,1.00);
+        font-size: 34px;
+        padding-top: 50px;
+        padding-bottom: -20px;
+    }
+    
+    #more-button {
+    transform: translate(10%,160%);
+    z-index: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mobile {
+        display: contents;
+    }
+    
+    .large {
+        display: none;
+    }
+    
+    #mobile-home, #mobile-build-info {
+        height: 50vh;
+    }
+    
+    #form, #form input, #form textarea, #form button, #quote {
+        width: 350px;
+        position: relative;
+        left: 0px;
+    }
+    
+    #mobile-more-button {
+        width: 350px;
+        padding: 20px;
+        border-radius: 50px;
+        background-color: rgba(21,35,141,1.00);
+        transform: translate(0%,50%);
+        margin: auto;
+        margin-left: 60px;
+    }
+    
+    #mobile-featured.mobile {
+        width: 300px;
+        font-size: 34px;
+        color: rgba(21,35,141,1.00);
+        margin-bottom: 500px;
+    }
+    
+    #mobile-build-info {
+        margin-bottom: 0px;
+    }
+    
+    #home {
+        margin-top: -100px;
+        padding-bottom: -300px;
+        
+    }
+    
+    #contact {
+        padding-top: -260px;
+        margin-bottom: 100px;
+    }
+}
