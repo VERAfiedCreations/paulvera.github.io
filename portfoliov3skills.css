@@ -247,10 +247,7 @@ nav ul li a:active {
     transform: translate(6px,5px);
 }
 
-#html-cr:hover {
-    stroke: #0f7173; /*teal*/
-    stroke-dasharray: 270;
-}
+
 
 #circle-skill2 {
     background-color:#0F7173; /*--- teal color ---*/
@@ -295,10 +292,7 @@ nav ul li a:active {
     transform: translate(6px,5px); 
 }
 
-#css-cr:hover {
-    stroke: #fe6d73; /*pink color*/
-    stroke-dasharray: 230;
-}
+
 
 #circle-skill3 {
     background-color: #FE6D73; /*-- pink color --*/
@@ -343,10 +337,6 @@ nav ul li a:active {
     transform: translate(6px,5px); 
 }
 
-#js-cr:hover {
-    stroke: #e7ecef; /*white*/
-    stroke-dasharray: 170;
-}
 
 #skills1 {
     color: #264048;
