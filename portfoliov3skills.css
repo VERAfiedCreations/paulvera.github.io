@@ -247,7 +247,10 @@ nav ul li a:active {
     transform: translate(6px,5px);
 }
 
-
+#html-cr:hover {
+    stroke: #0f7173; /*teal*/
+    stroke-dasharray: 270;
+}
 
 #circle-skill2 {
     background-color:#0F7173; /*--- teal color ---*/
@@ -292,7 +295,10 @@ nav ul li a:active {
     transform: translate(6px,5px); 
 }
 
-
+#css-cr:hover {
+    stroke: #fe6d73; /*pink color*/
+    stroke-dasharray: 230;
+}
 
 #circle-skill3 {
     background-color: #FE6D73; /*-- pink color --*/
@@ -337,6 +343,10 @@ nav ul li a:active {
     transform: translate(6px,5px); 
 }
 
+#js-cr:hover {
+    stroke: #e7ecef; /*white*/
+    stroke-dasharray: 170;
+}
 
 #skills1 {
     color: #264048;
@@ -446,50 +456,20 @@ nav ul li a:active {
     margin-top: 120px;
 }
 
-#main-resume {
-    padding: 20px;
-    grid-area: header;
-
-}
-
 h2 {
     font-size: 34px;
     margin: 0;
     color: #FE6D73;
 }
 
-#address {
-    width: 175px;
-    position: relative;
-    margin-top: 10px;
-    left: 84%;
-    color: white;
+/*--------------------------  Video Page  --*/
+#video-container {
+    margin: auto;
+    padding-top: 70px;
 }
 
-#port-link {
-    width: 400px;
-    position: relative;
-    left: 75%;
-    margin-bottom: 10px;
-    color: white;
-}
-
-#main-background {
-    padding: 20px;
-    grid-area: resume;
-    color: white;
-}
-
-#side {
-    width: 300px;
-    padding: 20px;
-    grid-area: aside;
-    color: white;
-}
-
-#soft-skills {
-    margin-top: 30px;
-    color: white;
+#col1, #col2, #col3 {
+    padding-bottom: 50px;
 }
 
 /*--------------------------  Circle Animations --*/
@@ -611,6 +591,10 @@ h2 {
     #resume a {
         bottom: 150px;
     }
+    
+    #video-container {
+        padding-top: 400px;
+    }
 }
 
 @media screen and (max-width:972px) {    
@@ -633,14 +617,8 @@ h2 {
         bottom: 1150px;
     }
     
-    #resume-container {
-        display: grid;
-        grid-template-columns: auto fr;
-        grid-template-rows: auto fr auto;
-        grid-template-areas:
-        "aside"
-        "resume";
-        overflow: hidden;
+    #video-container {
+        padding-top: 400px;
     }
 }
 
@@ -679,16 +657,9 @@ h2 {
         left: -90px;
     }
     
-    #resume-container {
-        display: grid;
-        grid-template-columns: auto fr;
-        grid-template-rows: auto fr auto;
-        grid-template-areas:
-        "aside aside"
-        "resume resume";
-        margin-top: 400px;
-        overflow: hidden;
-        height: 150vh;
+    #video-container {
+        padding-top: 400px;
+        margin-left: 0px;
     }
     
 }
