@@ -232,7 +232,6 @@ h3 {
     border-radius: 20px;
     float: right;
     position: relative;
-    transform: rotateY(180deg);
     left: -50px;
     top: 50px;
     box-shadow: 3px 4px 17px black;
