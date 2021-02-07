@@ -170,9 +170,9 @@ nav ul li a:active {
 #click-me:hover {
     position: relative;
     animation-name: click;
-    animation-duration: .8s;
+    animation-duration: .9s;
     animation-iteration-count: infinite; 
-    animation-delay: .3s;
+    animation-delay: .2s;
 }
 
 
@@ -181,72 +181,101 @@ nav ul li a:active {
 /* ----------------------  Large Projects  Page  ------------------------ */
 
 #projects {
-    grid-area: "projects";
     z-index: 0;
+    width: 100%;
     padding-top: 300px;
 }
 
-#projects a {
-    text-decoration: none;
+#view1, #view2, #view3 {
     color: aqua;
-    float: right;
+    text-decoration: none;
 }
 
-#projects a:hover {
+#view1:hover, #view2:hover, #view3:hover {
     color: #FE6D73; /*-- pink color --*/
     transform: translateY(3px);
 }
 
-h3 {
+#java, #ten, #biz {
     color: #FE6D73; /*-- pink color --*/
+    float: left;
+    text-decoration: none;
+    font-size: 24px;
+    width: 520px;
+    padding-bottom: 10px;
+}
+
+#java:hover, #ten:hover, #biz:hover {
+    color: aqua;
+}
+
+
+#todo-para {
+    position: relative;
+    width: 480px;
+    top: 0px;
+    left: 50px;
+    letter-spacing: 2px;
+    text-align: justify;
 }
 
 #tenfour-para {
     float: right;
     position: relative;
-    width: 550px;
-    top: -160px;
-    right: 100px;
+    width: 480px;
+    top: 200px;
+    right: 50px;
     letter-spacing: 2px;
+    text-align: justify;
 }
 
-#todo-para {
+#vera-para {
     float: left;
     position: relative;
-    width: 550px;
-    top: 60px;
-    left: 150px;
+    width: 480px;
+    top: 200px;
+    left: 50px;
     letter-spacing: 2px;
+    text-align: justify;
 }
 
 #coding {
-    border-radius: 20px;
     float: right;
+    border-radius: 20px;
     position: relative;
-    left: 50px;
-    top: -80px;
+    right: 50px;
+    top: -100px;
     box-shadow: 3px 4px 17px black;
+}
+
+#coding:hover{
+    transform: scale(1.1, 1.1);
 }
 
 #marketing {
+    float: left;
     border-radius: 20px;
-    float: right;
     position: relative;
-    left: -50px;
-    top: 50px;
+    left: 50px;
+    top: 120px;
     box-shadow: 3px 4px 17px black;
 }
 
-.project-img {
-    width: 500px;
+#marketing:hover{
+    transform: scale(1.1, 1.1);
 }
 
-#todo-header {
+#business {
     float: right;
+    border-radius: 20px;
+    position: relative;
+    right: 50px;
+    top: 120px;
+    box-shadow: 3px 4px 17px black;
 }
 
-#10-4-header{
-    float: left;
+#business:hover{
+    transform: scale(1.1, 1.1);
 }
 
 #to-do {
@@ -257,7 +286,13 @@ h3 {
 
 #tenfour {
     background-color: #264048; /*-- dark teal color --*/ 
-    height: 60vh;
+    height: 70vh;
+    color: white;
+}
+
+#vera {
+    background-color: black;
+    height: 70vh;
     color: white;
 }
 
@@ -265,6 +300,7 @@ h3 {
 
 #hire {
     grid-area: "hire";
+    width: 100%;
     height: 100vh;
     background-color: #264048; /*-- dark teal color --*/ 
 }
@@ -289,23 +325,20 @@ h3 {
     position: relative;
     right: -95px;
     top: 30px;
-    
 }
 
 #form-container {
-    float: right;
-    position: relative;
-    transform: translate(-100%, 0%);
-    top: 140px;
-    right: 100px;
+    margin: auto;
     width: 440px;
-    height: 75%;
+    height: 60vh;
+    margin-top: 130px;
     background-color:#CCCCCC; /*-- dark gray color --*/
     border-radius: 10px;
     box-shadow: .5px 2px 7px .5px black;
 }
 
-#form {
+form {
+    margin: auto;
     padding: 40px;
     width: 400px;
 }
@@ -363,19 +396,18 @@ textarea {
 /*-------------------------------Media Queries */
 
 @media screen and (max-width:1200px) {
-    body {
-        max-width: 1200px;
+    
+    #todo-para, #tenfour-para, #vera-para {
+        width: 350px;
     }
     
-    #todo-para {
-        width: 350px;
-    }
-    #tenfour-para {
-        width: 350px;
+    #coding, #marketing, #business {
+        width: 400px;
     }
     
     #form-container {
-        transform: translate(-50%, 0%);
+        height: 60vh;
+        margin-top: 290px;
     }
 }
 
@@ -406,10 +438,6 @@ textarea {
         height: 70%;
     }
     
-    #para {
-        width: 80%;
-    }
-    
     #view-my-work {
         transform: translate(-50%, 330%);
     
@@ -418,41 +446,40 @@ textarea {
     /*projects page*/
     #projects {
         margin-top: -160px;
-        
     }
     
-    #todo-header {
-        margin-top: -160px;
+    #to-do, #tenfour, #vera{
+        height: 60vh;
+        margin-bottom: -200px;
+        background-color: black;
     }
     
-    #todo-para {
+    #java, #ten, #biz {
         width: 350px;
-        margin-top: -120px;
-        margin-bottom: 100px;
-        left: 70px;
+        text-align: start;
     }
     
-    #tenfour-para {
-        margin-top: 250px;
-        width: 340px;
-        right: 90px;
+    #todo-para, #tenfour-para, #vera-para {
+        position: relative;
+        width: 350px;
+        margin: auto;
+        float: left;
     }
     
-    #10-4-header {
-        margin-top: 150px;
+    #tenfour-para{
+        float: left;
+        position: relative;
+        right: -50px;
+        top: 100px;
     }
     
-    #tenfour {
-        padding-bottom: 240px;
-    }
-    
-    
-    #marketing {
-        left: -60px;
+    #coding, #marketing, #business {
+        display: none; 
     }
     
     #form-container {
-        transform: translate(-30%, -0%);
+        height: 60vh;
+        margin-top: 290px;
     }
 }
 
@@ -482,8 +509,19 @@ textarea {
     
     /*projects Page*/
     
+    #java, #ten, #biz {
+        width: 350px;
+        text-align: start;
+    }
+    
+    #hire {
+        height: 90vh;
+        margin-top: 260px;
+    }
     #form-container {
-        transform: translate(0%, 5%);
+        height: 60vh;
+        position: relative;
+        bottom: 100px;
     }
 }
 
@@ -505,7 +543,7 @@ textarea {
     
     #header h1 {
         font-size: 50px;
-        transform: translate(5%,170%);
+        transform: translate(15%,170%);
     }
     
     #para {
@@ -527,41 +565,65 @@ textarea {
     /*projects Page*/
     #projects {
         margin-top: -160px;
-        
     }
     
     #todo-header {
         margin-top: -150px;
     }
     
-    #todo-para {
-        width: 350px;
-        margin-top: -120px;
-        margin-bottom: 100px;
-        left: 70px;
+}
+
+@media only screen and (max-width:375px){
+    #nav-links {
+        position: relative;
+        top: 120px;
+        left: -250px;
     }
     
-    #tenfour-para {
-        margin-top: 260px;
-        width: 340px;
-        right: 90px;
+    #logo {
+        position: relative;
+        top: 0px;
+        width: 100px;
+        left: 20px;
+        float: left;
     }
     
-    #10-4-header {
-        margin-top: 150px;
+    #social-links {
+        display: contents;
     }
     
-    #tenfour {
-        padding-bottom: 248px;
+    ::-webkit-scrollbar {
+    display: none;
     }
     
+    #header h1{
+        right: 10px;
+        position: relative;
+        
+    }
     
-    #marketing {
-        left: -60px;
+    #todo-para, #tenfour-para, #vera-para {
+        position: relative;
+        left: 15px;
     }
     
     #form-container {
-        transform: translate(13%, 5%);
+        width: 350px;
+        position: relative;
+        right: 23px;
     }
     
+    #form-container input, textarea {
+        width: 300px;
+    }
+    
+    form {
+        position: relative;
+        left: -20px;
+    }
+    
+    #submit {
+        position: relative;
+        left: 50px;
+    }
 }
