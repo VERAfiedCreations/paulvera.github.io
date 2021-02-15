@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Loan Calculator APP</title>
+<link rel="icon" href="favicon.ico">
+<style>
+    :root {
+        --main-color: #FFF;
+        --first-color: linear-gradient(-20deg, #0F7173, #0F7170);
+        --second-color: linear-gradient(-20deg, #0F7130, #0F7135);
+    }    
+
+    body{
+        width: 100%;
+        height: 100vh;
+        background-color: var(--main-color);
+    }
+    
+    #container {
+        width: 50%;
+        min-width: 350px;
+        height: 115vh;
+        margin: auto;
+        padding: 20px;
+        box-shadow: .5px .5px 1px .5px #000;
+    }
+    
+    h2 {
+        width: 200px;
+        margin: auto;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+    
+    label {
+        font-size: 1em;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+    
+    input {
+        border-radius: 5px;
+        height: 25px;
+        width: 80px;
+        margin: 10px;
+        outline-color: #0F7910;
+    }
+    
+    /* Chrome, Safari, Edge, Opera*/
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    
+    p {
+        width: 500px;
+        font-size: 1.2em;
+    }
+    
+    button {
+        width: 100%;
+        height: 4vh;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        letter-spacing: .5px;
+        color: #000;
+        outline: none;
+    }
+    
+    button:active {
+        box-shadow: 1px 2px 3px #000;
+    }
+    
+    #result-container {
+        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1em;
+    }
+    
+    .show {
+            width: 100%;
+        }
+    
+    #monthly-estimate, #total-loan, #new-monthly-est, #new-total-loan, #new-loan-term {
+        padding: 20px;
+        border-radius: 20px;
+        color: #FFF;
+    }
+    
+    #monthly-estimate, #total-loan {
+        background-image: var(--first-color);
+        color: #FFF;
+    }
+    
+    #new-monthly-est, #new-total-loan, #new-loan-term {
+        background-image: var(--second-color);
+    }
+    
+</style>
+</head>
+    
+<body>
+    <div id="container">
+        
+        <div id="banner"><h2>Loan Calculator</h2>
+        </div>
+    <br>
+        <form id="form">
+            <label> 
+            <input type="number" placeholder="$ " name="loan" id="loan" min="0" required>:Full Loan Amount
+            </label>
+        <br>
+            <label>
+            <input type="number" placeholder="/yrs" name="term" id="term" max="36" min="0" required>:Term In Years
+            </label>
+        <br>
+            <label>
+            <input type="number" name="apr" id="apr" max="20" min="0" value="3.4" step="0.1"  oninput="this.nextElementSibling.value = this.value" required> :Interest Rate (APR%)
+            </label>
+        <br>
+            <label> 
+            <input type="number" placeholder="$ " name="down" id="down" min="0">:Down Payment
+            </label>
+        <br>
+            <label> 
+            <input type="number" placeholder="$ " name="payoff" id="payoff" min="0">:Extra Added To Payment
+            </label>
+        <br>
+            <button id="submit" type="submit">Calculate</button>
+            <button id="reset" onclick="window.location.reload()">Reset</button>
+        <br>
+        <br>
+        <div id="result-container">
+            <label id="monthly-estimate">Monthly Estimate
+            <p id="estimate" class="show">$</p>
+            </label>
+            <label id="total-loan">Total Loan (interest included)
+            <p id="total" class="show">$</p>
+            </label>
+            <label id="new-monthly-est">New Monthly Est.
+            <p id="nEstimate" class="show">$</p>
+            </label>
+            <label id="new-total-loan">New Total Loan (interest included)
+            <p id="nTotalLoan" class="show">$</p>
+            </label>
+            <label id="new-loan-term">New Loan Term
+            <p id="nTotalTerm" class="show"> /months</p>
+            </label>
+        </div>
+        </form>
+    </div>
+    <br>
+</body>
+<script type="text/javascript">
+    
+//submit
+document.getElementById("form").addEventListener("submit", calculate);
+    
+// Functions
+function calculate(e){
+var loan = document.getElementById('loan');
+var term = document.getElementById('term');
+var apr = document.getElementById('apr');
+var down = document.getElementById('down');
+var payoff = document.getElementById('payoff');
+var estimate = document.getElementById('estimate');
+var total = document.getElementById('total');
+const submit = document.getElementById('submit');
+
+//Calculations
+var principal = parseFloat(loan.value);
+var interest = parseFloat(apr.value) / 100 / 12;
+var payments = parseFloat(term.value) * 12;
+
+//Monthly Payment
+const x = Math.pow(1 + interest, payments);
+const monthly = (principal * x * interest) / (x - 1);
+const monthlyPayment = monthly.toFixed(2);
+    
+//Interest
+const totalInterest = (monthly * payments - principal).toFixed(2);
+
+//Total Payment
+const totalPayment = (monthly * payments).toFixed(2);
+    
+//New Estimate Calculations
+var newLoanEstimate = (totalPayment - parseFloat(down.value)).toFixed(2);
+var newMonthly = (monthly + parseFloat(payoff.value)).toFixed(2);
+// var newLoanTerm; -- Need to configure the PV formula to JS
+
+//Results
+document.getElementById("estimate").innerHTML = "$ " + thousands_separators(monthlyPayment);
+
+document.getElementById("total").innerHTML = "$ " + thousands_separators(totalPayment);
+
+if (newMonthly > 0) {
+    document.getElementById("nEstimate").innerHTML = "$ " + thousands_separators(newMonthly);
+} else {
+    document.getElementById("nEstimate").innerHTML = "$ ";
+}
+    
+if (newLoanEstimate > 0){
+    document.getElementById("nTotalLoan").innerHTML = "$ " + thousands_separators(newLoanEstimate);
+} else {
+    document.getElementById("nTotalLoan").innerHTML = "$ ";
+}
+
+// if (newLoanTerm > 0) {
+ //   document.getElementById("nTotalTerm").innerHTML = thousands_separators(newLoanTerm) + " /months";
+//} else {
+  //  document.getElementById("nTotalTerm").innerHTML = " /months";
+//}
+    
+//Function for thousand seperators
+function thousands_separators(num) {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+
+e.preventDefault();
+}
+
+</script>
+</html>
